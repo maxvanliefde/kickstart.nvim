@@ -2,6 +2,7 @@
 -- https://github.com/nvim-neo-tree/neo-tree.nvim
 
 return {
+  lazy = false,
   'nvim-neo-tree/neo-tree.nvim',
   version = '*',
   dependencies = {
@@ -15,6 +16,15 @@ return {
   },
   opts = {
     filesystem = {
+      filtered_items = {
+        visible = true, -- when true, they will just be displayed differently than normal items
+        hide_dotfiles = false,
+        hide_gitignored = false,
+        hide_by_name = {
+          --"node_modules"
+        },
+      },
+      hijack_netrw_behavior = 'open_default',
       window = {
         mappings = {
           ['\\'] = 'close_window',
